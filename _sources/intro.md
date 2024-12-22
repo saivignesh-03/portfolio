@@ -1,6 +1,6 @@
 # Sai Vignesh Chintala
 
-![Sai Vignesh Chintala](./2%20(1).jpg)
+![image](imagess/my.jpg)
 
 **Address:** 1525 Amherst Manor DR, Buffalo, 14221 New York  
 **Email:** [chintalasaivignesh03@gmail.com](mailto:chintalasaivignesh03@gmail.com)  
@@ -9,6 +9,8 @@
 **GitHub:** [saivignesh-03](https://github.com/saivignesh-03)  
 
 ---
+
+
 
 ## Summary
 
