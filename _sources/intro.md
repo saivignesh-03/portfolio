@@ -49,7 +49,7 @@ Motivated Data Scientist with hands-on experience in building machine learning p
 
 - Coursework: Statistical Learning, Machine Learning, Applied Machine Learning at Scale, Numerical Mathematics for Computing, Probability Theory.
 
-#### EAS-503 Project: Insurance Plan Renewal Prediction
+#### EAS-503 Project: Breast cancer  Prediction
 1. **Dataset**: Processed structured data from a normalized database for predicting insurance renewals.
 2. **Approach**:
    - Conducted exploratory data analysis and machine learning experiments using scikit-learn pipelines.
