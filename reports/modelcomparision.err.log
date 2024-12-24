@@ -1,114 +1,42 @@
 Traceback (most recent call last):
-  File "C:\Users\SAI VIGNESH CHINTALA\Desktop\work\port\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+  File "C:\Users\SAI VIGNESH CHINTALA\desktop\work\port\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
     executenb(
-    ~~~~~~~~~^
-        nb,
-        ^^^
-    ...<4 lines>...
-        **kwargs,
-        ^^^^^^^^^
-    )
-    ^
-  File "C:\Users\SAI VIGNESH CHINTALA\Desktop\work\port\Lib\site-packages\nbclient\client.py", line 1319, in execute
+  File "C:\Users\SAI VIGNESH CHINTALA\desktop\work\port\Lib\site-packages\nbclient\client.py", line 1319, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "C:\Users\SAI VIGNESH CHINTALA\Desktop\work\port\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SAI VIGNESH CHINTALA\desktop\work\port\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
-           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
-  File "C:\Users\SAI VIGNESH CHINTALA\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 720, in run_until_complete
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 654, in run_until_complete
     return future.result()
-           ~~~~~~~~~~~~~^^
-  File "C:\Users\SAI VIGNESH CHINTALA\Desktop\work\port\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\SAI VIGNESH CHINTALA\desktop\work\port\Lib\site-packages\nbclient\client.py", line 709, in async_execute
     await self.async_execute_cell(
-        cell, index, execution_count=self.code_cells_executed + 1
-    )
-  File "C:\Users\SAI VIGNESH CHINTALA\Desktop\work\port\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+  File "C:\Users\SAI VIGNESH CHINTALA\desktop\work\port\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "C:\Users\SAI VIGNESH CHINTALA\Desktop\work\port\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+  File "C:\Users\SAI VIGNESH CHINTALA\desktop\work\port\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import mlflow
-import pandas as pd
-import matplotlib.pyplot as plt
+import joblib
 
-# Ensure inline plots in Jupyter Notebook
-%matplotlib inline
+# Load the trained model from MLFlow or use the existing instance
+# If `voting_classifier_model` is the already trained model instance:
+joblib.dump(voting_classifier_model, "final_model.joblib")
 
-# Set experiment name
-experiment_name = "Machinelearning"  # Replace with your experiment name
-experiment = mlflow.get_experiment_by_name(experiment_name)
-
-if not experiment:
-    print(f"Experiment '{experiment_name}' not found. Please check the name.")
-else:
-    experiment_id = experiment.experiment_id
-
-    # Retrieve all runs for the experiment
-    runs = mlflow.search_runs(experiment_ids=[experiment_id])
-
-    # Debug: Print all columns to check available metrics and parameters
-    print("Columns in the runs DataFrame:")
-    print(runs.columns)
-
-    # Select metrics of interest based on available metrics in your MLflow
-    metrics_of_interest = ['f1_score', 'accuracy']  # Add or adjust as needed
-    if not all([f'metrics.{m}' in runs.columns for m in metrics_of_interest]):
-        print(f"Some metrics in {metrics_of_interest} are not found in the runs.")
-    else:
-        # Select and rename columns
-        comparison_df = runs[['run_id', 'tags.mlflow.runName'] + [f'metrics.{m}' for m in metrics_of_interest]]
-        comparison_df.rename(columns={
-            'tags.mlflow.runName': 'run_name',
-            'metrics.f1_score': 'f1_score',
-            'metrics.accuracy': 'accuracy'
-        }, inplace=True)
-
-        # Drop rows without required metrics
-        comparison_df.dropna(subset=['f1_score', 'accuracy'], inplace=True)
-
-        if comparison_df.empty:
-            print("No valid runs found with the required metrics.")
-        else:
-            # Print the comparison DataFrame
-            print("Comparison of Experiments:")
-            print(comparison_df[['run_name', 'f1_score', 'accuracy']])
-
-            # Plot F1-score Comparison
-            comparison_df.sort_values(by='f1_score', ascending=False, inplace=True)
-            plt.figure(figsize=(12, 7))
-            plt.barh(comparison_df['run_name'], comparison_df['f1_score'], color='skyblue')
-            plt.xlabel('F1-score', fontsize=12)
-            plt.ylabel('Experiments', fontsize=12)
-            plt.title('F1-score Comparison of Experiments', fontsize=14)
-            plt.gca().invert_yaxis()  # Show the best at the top
-            plt.grid(axis='x', linestyle='--', alpha=0.7)
-            plt.tight_layout()
-            plt.savefig('f1_score_comparison.png')
-            plt.show()
-
-            # Plot Accuracy Comparison
-            comparison_df.sort_values(by='accuracy', ascending=False, inplace=True)
-            plt.figure(figsize=(12, 7))
-            plt.barh(comparison_df['run_name'], comparison_df['accuracy'], color='lightgreen')
-            plt.xlabel('Accuracy', fontsize=12)
-            plt.ylabel('Experiments', fontsize=12)
-            plt.title('Accuracy Comparison of Experiments', fontsize=14)
-            plt.gca().invert_yaxis()
-            plt.grid(axis='x', linestyle='--', alpha=0.7)
-            plt.tight_layout()
-            plt.savefig('accuracy_comparison.png')
-            plt.show()
+print("Model saved as 'final_model.joblib'")
 
 ------------------
 
 
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [1;32mIn[1], line 1[0m
-[1;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mmlflow[39;00m
-[0;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
-[0;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[1;31mNameError[0m                                 Traceback (most recent call last)
+Cell [1;32mIn[3], line 5[0m
+[0;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mjoblib[39;00m
+[0;32m      3[0m [38;5;66;03m# Load the trained model from MLFlow or use the existing instance[39;00m
+[0;32m      4[0m [38;5;66;03m# If `voting_classifier_model` is the already trained model instance:[39;00m
+[1;32m----> 5[0m joblib[38;5;241m.[39mdump([43mvoting_classifier_model[49m, [38;5;124m"[39m[38;5;124mfinal_model.joblib[39m[38;5;124m"[39m)
+[0;32m      7[0m [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mModel saved as [39m[38;5;124m'[39m[38;5;124mfinal_model.joblib[39m[38;5;124m'[39m[38;5;124m"[39m)
 
-[1;31mModuleNotFoundError[0m: No module named 'mlflow'
+[1;31mNameError[0m: name 'voting_classifier_model' is not defined
 

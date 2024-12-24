@@ -516,18 +516,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Load the dataset</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="sql-join-statement-to-fetch-data-from-the-database-and-into-pandas-dataframe">
@@ -662,8 +650,8 @@ M    36.842105
 Name: proportion, dtype: float64
 
 Train/Test Split Sizes:
-Training set size: (455, 30)
-Test set size: (114, 30)
+Training set size: (455, 5)
+Test set size: (114, 5)
 </pre></div>
 </div>
 </div>
@@ -731,7 +719,253 @@ Test set size: (114, 30)
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "7baa9f1fcef44a3a8e869d0b54f66b09", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "e993c18c6ba84172b903d27b1d3ba54c", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "0de2b09036974071b5765d216a8611bc", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "e10843c1df504dae9144901a5a86363a", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Y-Profile Report saved as &#39;breast_cancer_profile_report.html&#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:   0%|                                 | 0/5 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:   0%|   | 0/12 [00:00&lt;?, ?it/s, Describe variable:diagnosis]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:   8%| | 1/12 [00:00&lt;00:00, 22.56it/s, Describe variable:smoo
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  17%|▏| 2/12 [00:00&lt;00:00, 45.13it/s, Describe variable:text
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  25%|▎| 3/12 [00:00&lt;00:00, 49.92it/s, Describe variable:radi
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  33%|▋ | 4/12 [00:00&lt;00:00, 66.56it/s, Describe variable:id]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  42%|▍| 5/12 [00:00&lt;00:00, 83.20it/s, Describe variable:peri
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  50%|▌| 6/12 [00:00&lt;00:00, 99.84it/s, Describe variable:area
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  58%|█▊ | 7/12 [00:00&lt;00:00, 116.48it/s, Get variable types]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  62%|▌| 8/13 [00:00&lt;00:00, 133.12it/s, Get dataframe statist
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  64%|▋| 9/14 [00:00&lt;00:00, 149.76it/s, Calculate auto correl
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  71%|▋| 10/14 [00:00&lt;00:00, 92.60it/s, Calculate auto correl
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  71%|██▏| 10/14 [00:00&lt;00:00, 92.60it/s, Get scatter matrix]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  20%|█▍     | 10/50 [00:00&lt;00:00, 92.60it/s, scatter id, id]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  22%|▏| 11/50 [00:00&lt;00:00, 92.60it/s, scatter radius_mean, 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  24%|▏| 12/50 [00:00&lt;00:00, 92.60it/s, scatter texture_mean,
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  26%|▎| 13/50 [00:00&lt;00:00, 92.60it/s, scatter perimeter_mea
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  28%|▎| 14/50 [00:00&lt;00:00, 92.60it/s, scatter area_mean, id
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  30%|▎| 15/50 [00:00&lt;00:00, 92.60it/s, scatter smoothness_me
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  32%|▎| 16/50 [00:00&lt;00:00, 92.60it/s, scatter id, radius_me
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  34%|▎| 17/50 [00:00&lt;00:00, 92.60it/s, scatter radius_mean, 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  36%|▎| 18/50 [00:01&lt;00:00, 92.60it/s, scatter texture_mean,
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  38%|▍| 19/50 [00:01&lt;00:00, 92.60it/s, scatter perimeter_mea
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  40%|▍| 20/50 [00:01&lt;00:02, 14.16it/s, scatter perimeter_mea
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  40%|▍| 20/50 [00:01&lt;00:02, 14.16it/s, scatter area_mean, ra
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  42%|▍| 21/50 [00:01&lt;00:02, 14.16it/s, scatter smoothness_me
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  44%|▍| 22/50 [00:01&lt;00:01, 14.16it/s, scatter id, texture_m
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  46%|▍| 23/50 [00:01&lt;00:01, 14.16it/s, scatter radius_mean, 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  48%|▍| 24/50 [00:01&lt;00:01, 14.16it/s, scatter texture_mean,
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  50%|▌| 25/50 [00:01&lt;00:01, 13.66it/s, scatter texture_mean,
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  50%|▌| 25/50 [00:01&lt;00:01, 13.66it/s, scatter perimeter_mea
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  52%|▌| 26/50 [00:01&lt;00:01, 13.66it/s, scatter area_mean, te
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  54%|▌| 27/50 [00:01&lt;00:01, 13.66it/s, scatter smoothness_me
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  56%|▌| 28/50 [00:01&lt;00:01, 13.25it/s, scatter smoothness_me
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  56%|▌| 28/50 [00:01&lt;00:01, 13.25it/s, scatter id, perimeter
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  58%|▌| 29/50 [00:01&lt;00:01, 13.25it/s, scatter radius_mean, 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  60%|▌| 30/50 [00:02&lt;00:01, 13.25it/s, scatter texture_mean,
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  62%|▌| 31/50 [00:02&lt;00:01, 12.70it/s, scatter texture_mean,
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  62%|▌| 31/50 [00:02&lt;00:01, 12.70it/s, scatter perimeter_mea
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  64%|▋| 32/50 [00:02&lt;00:01, 12.70it/s, scatter area_mean, pe
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  66%|▋| 33/50 [00:02&lt;00:01, 12.29it/s, scatter area_mean, pe
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  66%|▋| 33/50 [00:02&lt;00:01, 12.29it/s, scatter smoothness_me
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  68%|▋| 34/50 [00:02&lt;00:01, 12.29it/s, scatter id, area_mean
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  70%|▋| 35/50 [00:02&lt;00:01, 11.72it/s, scatter id, area_mean
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  70%|▋| 35/50 [00:02&lt;00:01, 11.72it/s, scatter radius_mean, 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  72%|▋| 36/50 [00:02&lt;00:01, 11.72it/s, scatter texture_mean,
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  74%|▋| 37/50 [00:02&lt;00:01, 11.83it/s, scatter texture_mean,
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  74%|▋| 37/50 [00:02&lt;00:01, 11.83it/s, scatter perimeter_mea
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  76%|▊| 38/50 [00:02&lt;00:01, 11.83it/s, scatter area_mean, ar
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  78%|▊| 39/50 [00:02&lt;00:00, 11.74it/s, scatter area_mean, ar
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  78%|▊| 39/50 [00:02&lt;00:00, 11.74it/s, scatter smoothness_me
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  80%|▊| 40/50 [00:02&lt;00:00, 11.74it/s, scatter id, smoothnes
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  82%|▊| 41/50 [00:03&lt;00:00, 11.65it/s, scatter id, smoothnes
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  82%|▊| 41/50 [00:03&lt;00:00, 11.65it/s, scatter radius_mean, 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  84%|▊| 42/50 [00:03&lt;00:00, 11.65it/s, scatter texture_mean,
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  86%|▊| 43/50 [00:03&lt;00:00, 11.32it/s, scatter texture_mean,
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  86%|▊| 43/50 [00:03&lt;00:00, 11.32it/s, scatter perimeter_mea
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  88%|▉| 44/50 [00:03&lt;00:00, 11.32it/s, scatter area_mean, sm
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  90%|▉| 45/50 [00:03&lt;00:00, 10.92it/s, scatter area_mean, sm
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  90%|▉| 45/50 [00:03&lt;00:00, 10.92it/s, scatter smoothness_me
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  88%|█▊| 46/52 [00:03&lt;00:00, 10.92it/s, Missing diagram bar]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  90%|█▊| 47/52 [00:03&lt;00:00, 10.00it/s, Missing diagram bar]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  90%|▉| 47/52 [00:03&lt;00:00, 10.00it/s, Missing diagram matri
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  92%|█████████▏| 48/52 [00:03&lt;00:00, 10.00it/s, Take sample]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  94%|█████████▍| 49/52 [00:03&lt;00:00, 11.29it/s, Take sample]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  94%|▉| 49/52 [00:03&lt;00:00, 11.29it/s, Detecting duplicates]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  96%|██████████▌| 50/52 [00:03&lt;00:00, 11.29it/s, Get alerts]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset:  98%|▉| 51/52 [00:03&lt;00:00, 11.29it/s, Get reproduction deta
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset: 100%|████████████| 52/52 [00:03&lt;00:00, 11.29it/s, Completed]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summarize dataset: 100%|████████████| 52/52 [00:03&lt;00:00, 13.62it/s, Completed]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generate report structure:   0%|                         | 0/1 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generate report structure: 100%|█████████████████| 1/1 [00:02&lt;00:00,  2.19s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generate report structure: 100%|█████████████████| 1/1 [00:02&lt;00:00,  2.19s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Render HTML:   0%|                                       | 0/1 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Render HTML: 100%|███████████████████████████████| 1/1 [00:00&lt;00:00,  1.00it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Render HTML: 100%|███████████████████████████████| 1/1 [00:01&lt;00:00,  1.02s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Export report to file:   0%|                             | 0/1 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Export report to file: 100%|█████████████████████████████| 1/1 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Y-Profile Report saved as &#39;breast_cancer_profile_report.html&#39;
 </pre></div>
 </div>
 </div>
@@ -744,20 +978,20 @@ Test set size: (114, 30)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame Shape: (438, 7)
-        id  diagnosis  radius_mean  texture_mean  perimeter_mean  area_mean  \
-0   842302          1        17.99         10.38          122.80     1001.0   
-5   843786          1        12.45         15.70           82.57      477.1   
-6   844359          1        18.25         19.98          119.60     1040.0   
-8   844981          1        13.00         21.82           87.50      519.8   
-10  845636          1        16.02         23.24          102.70      797.8   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame Shape: (569, 7)
+         id  diagnosis  radius_mean  texture_mean  perimeter_mean  area_mean  \
+0    842302          1        17.99         10.38          122.80     1001.0   
+1    842517          1        20.57         17.77          132.90     1326.0   
+2  84300903          1        19.69         21.25          130.00     1203.0   
+3  84348301          1        11.42         20.38           77.58      386.1   
+4  84358402          1        20.29         14.34          135.10     1297.0   
 
-    smoothness_mean  
-0           0.11840  
-5           0.12780  
-6           0.09463  
-8           0.12730  
-10          0.08206  
+   smoothness_mean  
+0          0.11840  
+1          0.08474  
+2          0.10960  
+3          0.14250  
+4          0.10030  
 </pre></div>
 </div>
 </div>
@@ -769,7 +1003,7 @@ Test set size: (114, 30)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame Shape After Cleaning: (438, 7)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame Shape After Cleaning: (569, 7)
 </pre></div>
 </div>
 </div>
@@ -903,13 +1137,17 @@ Test set size: (114, 30)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024/12/21 19:53:21 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.
-Registered model &#39;LogisticRegression-Experiment-1&#39; already exists. Creating a new version of this model...
-2024/12/21 19:53:24 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: LogisticRegression-Experiment-1, version 23
-Created version &#39;23&#39; of model &#39;LogisticRegression-Experiment-1&#39;.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024/12/23 22:28:06 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🏃 View run Experiment #1: Logistic Regression with Preprocessing at: https://dagshub.com/saivignesh-03/Machinelearning.mlflow/#/experiments/0/runs/4ecce5b57cb445ab88c69876180301f9
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registered model &#39;LogisticRegression-Experiment-1&#39; already exists. Creating a new version of this model...
+2024/12/23 22:28:09 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: LogisticRegression-Experiment-1, version 26
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Created version &#39;26&#39; of model &#39;LogisticRegression-Experiment-1&#39;.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🏃 View run Experiment #1: Logistic Regression with Preprocessing at: https://dagshub.com/saivignesh-03/Machinelearning.mlflow/#/experiments/0/runs/465d647c81ba47e7bbbd4beddc5429e2
 🧪 View experiment at: https://dagshub.com/saivignesh-03/Machinelearning.mlflow/#/experiments/0
 
 Experiment #1 Completed:
@@ -1027,10 +1265,16 @@ Confusion Matrix: TP=204, TN=355, FP=2, FN=8
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024/12/21 19:53:39 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.
-Registered model &#39;LogisticRegression-Experiment-2&#39; already exists. Creating a new version of this model...
-2024/12/21 19:53:44 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: LogisticRegression-Experiment-2, version 12
-Created version &#39;12&#39; of model &#39;LogisticRegression-Experiment-2&#39;.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024/12/23 22:28:24 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registered model &#39;LogisticRegression-Experiment-2&#39; already exists. Creating a new version of this model...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024/12/23 22:28:30 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: LogisticRegression-Experiment-2, version 14
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Created version &#39;14&#39; of model &#39;LogisticRegression-Experiment-2&#39;.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Experiment #2 Completed for LogisticRegression:
@@ -1047,83 +1291,13 @@ Classification Report:
     accuracy                           0.97       569
    macro avg       0.97      0.96      0.97       569
 weighted avg       0.97      0.97      0.97       569
-
-🏃 View run Experiment #2: LogisticRegression at: https://dagshub.com/saivignesh-03/Machinelearning.mlflow/#/experiments/0/runs/e9fdb175e2bc45d7a47fcadf1dc41bdf
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🏃 View run Experiment #2: LogisticRegression at: https://dagshub.com/saivignesh-03/Machinelearning.mlflow/#/experiments/0/runs/a44f046241f24f7b92a7e6ab4cea9ce6
 🧪 View experiment at: https://dagshub.com/saivignesh-03/Machinelearning.mlflow/#/experiments/0
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024/12/21 19:54:05 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.
-Registered model &#39;RidgeClassifier-Experiment-2&#39; already exists. Creating a new version of this model...
-2024/12/21 19:54:09 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: RidgeClassifier-Experiment-2, version 11
-Created version &#39;11&#39; of model &#39;RidgeClassifier-Experiment-2&#39;.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Experiment #2 Completed for RidgeClassifier:
-10-Fold F1 Score: Mean=0.9381, Std=0.0463
-10-Fold Accuracy Score: Mean=0.9579, Std=0.0285
-Confusion Matrix: TP=193, TN=356, FP=1, FN=19
-
-Classification Report:
-              precision    recall  f1-score   support
-
-           0       0.95      1.00      0.97       357
-           1       0.99      0.91      0.95       212
-
-    accuracy                           0.96       569
-   macro avg       0.97      0.95      0.96       569
-weighted avg       0.97      0.96      0.96       569
-
-🏃 View run Experiment #2: RidgeClassifier at: https://dagshub.com/saivignesh-03/Machinelearning.mlflow/#/experiments/0/runs/d979227c5c4c42af987354007b07ac3a
-🧪 View experiment at: https://dagshub.com/saivignesh-03/Machinelearning.mlflow/#/experiments/0
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024/12/21 19:54:30 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.
-Registered model &#39;RandomForestClassifier-Experiment-2&#39; already exists. Creating a new version of this model...
-2024/12/21 19:54:34 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: RandomForestClassifier-Experiment-2, version 11
-Created version &#39;11&#39; of model &#39;RandomForestClassifier-Experiment-2&#39;.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Experiment #2 Completed for RandomForestClassifier:
-10-Fold F1 Score: Mean=0.9421, Std=0.0319
-10-Fold Accuracy Score: Mean=0.9579, Std=0.0225
-Confusion Matrix: TP=212, TN=357, FP=0, FN=0
-
-Classification Report:
-              precision    recall  f1-score   support
-
-           0       1.00      1.00      1.00       357
-           1       1.00      1.00      1.00       212
-
-    accuracy                           1.00       569
-   macro avg       1.00      1.00      1.00       569
-weighted avg       1.00      1.00      1.00       569
-
-🏃 View run Experiment #2: RandomForestClassifier at: https://dagshub.com/saivignesh-03/Machinelearning.mlflow/#/experiments/0/runs/170916ea91504a409450f15049a58d1e
-🧪 View experiment at: https://dagshub.com/saivignesh-03/Machinelearning.mlflow/#/experiments/0
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024/12/21 19:54:55 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.
-Registered model &#39;XGBClassifier-Experiment-2&#39; already exists. Creating a new version of this model...
-2024/12/21 19:54:59 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: XGBClassifier-Experiment-2, version 11
-Created version &#39;11&#39; of model &#39;XGBClassifier-Experiment-2&#39;.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Experiment #2 Completed for XGBClassifier:
-10-Fold F1 Score: Mean=0.9423, Std=0.0432
-10-Fold Accuracy Score: Mean=0.9579, Std=0.0306
-Confusion Matrix: TP=212, TN=357, FP=0, FN=0
-
-Classification Report:
-              precision    recall  f1-score   support
-
-           0       1.00      1.00      1.00       357
-           1       1.00      1.00      1.00       212
-
-    accuracy                           1.00       569
-   macro avg       1.00      1.00      1.00       569
-weighted avg       1.00      1.00      1.00       569
-
-🏃 View run Experiment #2: XGBClassifier at: https://dagshub.com/saivignesh-03/Machinelearning.mlflow/#/experiments/0/runs/91bcbc17ab414e46aa6bebe54de57719
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🏃 View run Experiment #2: RidgeClassifier at: https://dagshub.com/saivignesh-03/Machinelearning.mlflow/#/experiments/0/runs/e355caf20bd640ffb66c08b22b7ca212
 🧪 View experiment at: https://dagshub.com/saivignesh-03/Machinelearning.mlflow/#/experiments/0
 </pre></div>
 </div>
