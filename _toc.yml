@@ -4,6 +4,13 @@
 format: jb-book
 root: intro
 chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+  - file: Breastcancerprediction
+    title: EAS-503 Breast Cancer Prediction
+  - file: experiments
+    title: Experiments
+  - file: modelcomparision
+    title: Finding Best Model
+  - file: steps
+    title: Steps Done
+  - file: video
+    title: Video

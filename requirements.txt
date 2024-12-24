@@ -1,4 +1,13 @@
-ghp-import
-jupyter-book
-matplotlib
 numpy
+pandas
+seaborn
+matplotlib
+scikit-learn
+xgboost
+mlflow
+joblib
+uvicorn
+fastapi
+pydantic
+ydata-profiling
+nest-asyncio
