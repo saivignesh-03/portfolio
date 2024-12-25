@@ -37,8 +37,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['import os', 'import mlflow', 'import mlflow.sklearn', 'import numpy as np', 'from sklearn.model_selection import StratifiedKFold, cross_val_score']
+['import os', 'import mlflow', 'import numpy as np', 'import pandas as pd', 'from sklearn.model_selection import StratifiedKFold, cross_val_score, GridSearchCV']
 ...
-['        print(f"10-Fold F1 Score: Mean={np.mean(f1_scores):.4f}, Std={np.std(f1_scores):.4f}")', '        print(f"10-Fold Accuracy Score: Mean={np.mean(acc_scores):.4f}, Std={np.std(acc_scores):.4f}")', '        print(f"Confusion Matrix: TP={tp}, TN={tn}, FP={fp}, FN={fn}")', '        print("\\nClassification Report:")', '        print(classification_report(y, y_pred))']
+['print("\\nExperiment #1 Completed:")', 'print(f"Best Parameters: {best_params}")', 'print(f"3-Fold F1 Score: Mean={np.mean(f1_scores_3fold):.4f}")', 'print(f"10-Fold F1 Score: Mean={np.mean(f1_scores_10fold):.4f}")', 'print(f"Confusion Matrix: TP={tp}, TN={tn}, FP={fp}, FN={fn}")']
 -------------------
 
